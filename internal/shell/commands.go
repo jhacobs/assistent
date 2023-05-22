@@ -13,6 +13,8 @@ func runShellCommands(input string, args []string) error {
 		os.Exit(0)
 	case "cd":
 		return command.ChangeDir(args)
+	case "task":
+		// TODO:
 	}
 
 	return runDefaultCommands(input, args)

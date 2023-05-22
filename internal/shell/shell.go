@@ -12,15 +12,7 @@ import (
 )
 
 func Start() {
-	exitSignals := make(chan os.Signal, 1)
-	signal.Notify(exitSignals, syscall.SIGINT, syscall.SIGTERM)
-
-	go func() {
-		for {
-			<-exitSignals
-			os.Exit(0)
-		}
-	}()
+	handleExitSignals()
 
 	reader := bufio.NewReader(os.Stdin)
 
@@ -66,4 +58,14 @@ func getCurrentDir() (string, error) {
 
 	parts := strings.Split(currentDir, "/")
 	return parts[len(parts)-1], nil
+}
+
+func handleExitSignals() {
+	exitSignals := make(chan os.Signal, 1)
+	signal.Notify(exitSignals, syscall.SIGINT, syscall.SIGTERM)
+
+	go func() {
+		<-exitSignals
+		os.Exit(0)
+	}()
 }
