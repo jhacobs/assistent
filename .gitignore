@@ -16,6 +16,3 @@ vendor/
 
 # Go workspace file
 go.work
-
-# Sqlite database file
-database/*.db
