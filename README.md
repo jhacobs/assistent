@@ -1,6 +1,6 @@
-# Jarvis
+# Jarvis like assistent
 
-- Start bash
+TODO:
 
 - Tasks
     - Create task
@@ -8,9 +8,7 @@
     - Delete task
 
 
-create task "boodschappen doen"
-delete task "boodschappen doen"
-complete task "boodschappen doen"
+Task command examples:
 
 task create "boodschappen doen"
 task delete "boodschappen doen"
